@@ -1,4 +1,4 @@
-# Rocket-League-Play-Style-Analysis-using-Deep-Learning---Adit-Shah
+# An advanced form of machine learning, namely deep learning, has been utilized to categorize play styles at the basis of the Rocket League game and for strategic analysis on the same game as well.
 
 Rocket League Play Style Analysis: Insights and Feature Importance Using Deep Learning
 This repository documents the development efforts focused on analyzing Rocket League gameplay data using deep learning and data analysis techniques.
