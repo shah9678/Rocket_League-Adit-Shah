@@ -97,6 +97,6 @@ The methodologies here can be extended to other competitive games (e.g., FIFA, D
 ---
 
 ### Acknowledgments
-This project is supported by data from Omnic Data and Northeastern University, Roux Institute. Special thanks to these organizations for facilitating the research.
+This project is supported by data from Omnic Data. Special thanks to these organizations for facilitating the research.
 
 ---
