@@ -1,53 +1,77 @@
 # Deep Learning for Strategic Play Style Categorization in Rocket League
 
+## Rocket League Play Style Analysis: Insights and Feature Importance Using Deep Learning
+This repository contains development efforts to analyze Rocket League gameplay data using deep learning and data analysis techniques.
 
-Rocket League Play Style Analysis: Insights and Feature Importance Using Deep Learning
-This repository documents the development efforts focused on analyzing Rocket League gameplay data using deep learning and data analysis techniques.
+---
 
-# Motivation and Research Questions
-The motivation behind this project is to explore and understand the strategic elements of Rocket League gameplay. In the Rocket League community, certain playstyles, car selections, and strategies are often considered optimal or "meta" for competitive success. However, much of this knowledge is anecdotal, with limited data-driven analysis available to substantiate these claims.
+### Motivation and Research Questions
+The goal of this project is to explore and understand the strategic elements of Rocket League gameplay using data-driven methods to substantiate gameplay strategies often discussed in the Rocket League community. Key research questions addressed include:
 
-The goal of this project is to investigate these claims by formulating them into research questions and applying deep learning and data analysis to find answers. The main questions considered in this analysis are:
+- What factors contribute to winning a match in Rocket League?
+- Are certain cars or team compositions consistently linked to better outcomes?
+- How do gameplay strategies shift between offensive and defensive phases?
+- Can we classify players into distinct play styles based on gameplay data?
+- Do car types (e.g., Octane, Dominus, Fennec) correspond to unique strategies?
+- Are there other roles or styles that better capture player behavior?
 
-# What key factors contribute to winning a match in Rocket League?
-Are there specific cars or team compositions that consistently lead to better match outcomes?
-How does gameplay strategy shift between offensive and defensive phases?
-Can we classify Rocket League players into distinct play styles based solely on gameplay data?
-Do different car types (e.g., Octane, Dominus, Fennec) correspond to different strategies and gameplay mechanics?
-Are there other roles or styles that better describe how players actually play the game?
-These questions are further elaborated in the play_style and strategy sections of this repository.
+### About the Data
+The dataset, sourced from Omnic Data, an AI-driven esports coaching platform, includes data from high-level competitive Rocket League matches. It consists of time-series data capturing player actions and events with precise timestamps, providing a rich basis for deep analysis.
 
-# About the Data
-The data used for this project is provided by Omnic Data, an AI-driven e-sports coaching platform that collects gameplay data from uploaded Rocket League matches. The dataset includes tens of thousands of matches from high-level competitive play, ensuring that the data is both rich and relevant for deep analysis. Each match is recorded as a time-series, with events and player actions captured at precise timestamps.
+### Repository Overview
+- **play_style**: Analyzes player behavior to identify play styles using deep learning models.
+- **strategy**: Investigates factors that contribute to successful match outcomes, including car choice, positioning, and decision-making.
+- **preprocess**: Documents the data preparation process, including parsing, cleaning, and feature engineering.
 
-# Repository Overview
-This repository is organized into several sections:
+### Methodology
 
-play_style: This section deals with the analysis of player behaviors, focusing on identifying different play styles using deep learning models.
-strategy: This section investigates the factors that contribute to successful match outcomes, including car selection, positioning, and in-game decisions.
-In addition, the preprocess directory details the extensive data preparation process, including parsing, cleaning, and feature engineering.
+#### Data Collection and Preprocessing
+The raw data undergoes preprocessing to convert Rocket League match logs into sequences representing key features such as player and ball positions, boost levels, and outcomes, normalized and organized in a 3D tensor format suitable for deep learning.
 
-# Main Results
-What Factors Contribute to Winning in Rocket League?
-During the exploratory data analysis (EDA), it became clear that no single car or team composition was consistently linked to better outcomes. This suggests that winning in Rocket League is more about strategy and execution than simply choosing the "best" car or configuration.
+#### CNN-LSTM Model for Play Style Categorization and Outcome Prediction
+A CNN-LSTM hybrid model is used to classify player strategies into aggressive, defensive, or hybrid play styles and predict match outcomes based on spatial and temporal data. Convolutional layers capture spatial configurations, while LSTM layers model the sequential evolution of gameplay. 
 
-Using both Convolutional Neural Networks (CNNs) and Recurrent Neural Networks (RNNs) with Long Short-Term Memory (LSTM) layers, I attempted to classify matches into wins and losses. The models' performance was evaluated using metrics such as accuracy and F1 score, which ranged from 88% to 94% depending on the specific focus (e.g., offense vs. defense).
+#### Reinforcement Learning Model for Real-Time Win Likelihood Prediction
+The RL model analyzes gameplay in discrete segments to predict win probabilities dynamically, learning from features like ball control, boost usage, and player positioning. This approach allows for real-time tactical adjustments.
 
-Key insights from the feature importance analysis indicated that boost management, positioning, and decision-making during critical moments were the most influential factors in determining match outcomes. These findings highlight the importance of maintaining optimal boost levels and making strategic positioning decisions.
+### Main Results
 
-Is It Possible to Classify Rocket League Players Into Distinct Play Styles?
-For this question, I utilized a deep learning model with CNN and LSTM layers to classify players into different play styles based on gameplay data. Initial results were promising, with accuracy exceeding 90%. However, when filtering out factors like player choice (e.g., car type), the model's accuracy dropped to 80%. This suggests that while player choices do influence play style, gameplay data alone is still a strong indicator of a player’s preferred strategy.
+#### What Factors Contribute to Winning in Rocket League?
+- Winning in Rocket League appears to be more influenced by strategic decisions and execution rather than a particular car or team composition.
+- Feature importance analysis highlighted that boost management, positioning, and critical decision-making significantly impact match outcomes.
 
-# Challenges and Limitations
-Limited Data Perspective
-The data used for this project focuses on high-level players, which might introduce bias and limit the generalizability of the findings. Additionally, the dataset lacks team-based interaction data, which could provide deeper insights into cooperative play dynamics.
+#### Can We Classify Rocket League Players Into Distinct Play Styles?
+- The CNN-LSTM model achieved >90% accuracy in classifying play styles, although removing player-specific choices like car type reduced accuracy to 80%, indicating a strong influence of player choices on play style.
 
-# Sparse Data
-The combination of categorical and numerical features resulted in some sparsity in the data after preprocessing. This sparsity could have impacted the performance of certain models, particularly in unsupervised learning scenarios.
+### Experimental Results
 
-# Future Work
-Team-Based Analysis: Future work could involve incorporating team-based data to better understand cooperative strategies in Rocket League.
-Unsupervised Learning: With additional data, it would be worthwhile to revisit unsupervised clustering methods to identify more granular play styles or roles within the game.
-Event-Based Analysis: A deeper analysis focusing on critical in-game events (e.g., goals, saves, boost pickups) could provide further insights into what actions lead to success or failure in matches.
-Acknowledgments
-The data for this academic project was provided by Omnic Data, with additional support and guidance from Northeastern University, Roux Institute.
+- **Accuracy**: 89% for win/loss prediction and 91% for play style categorization.
+- **Precision & Recall**: High precision and recall for both tasks, with F1-scores confirming model robustness.
+- **Error Analysis**: Confusion matrices revealed occasional misclassification of hybrid play styles, highlighting the complexity of dynamic strategies.
+
+### Visualization of Results
+Figures illustrate the distribution of key metrics (ball possession, boost usage, etc.) across different play styles and player ranks, showcasing the evolution of strategies with experience and rank.
+
+---
+
+### Discussion and Implications
+
+#### Implications for Esports
+This study demonstrates how deep learning can enhance strategic understanding in Rocket League, allowing teams to make data-driven adjustments during and before matches. The RL model's real-time predictive capability opens possibilities for in-game tactical feedback, a valuable tool for high-stakes scenarios.
+
+#### Broader Applications Beyond Rocket League
+While designed for Rocket League, the framework is applicable to other esports (e.g., FIFA, Dota 2) and traditional sports (e.g., soccer, basketball), where spatial and temporal dynamics are key to strategy.
+
+### Challenges and Limitations
+- **Post-Match Data Dependency**: Real-time applications would require optimization for faster data processing.
+- **Play Style Categorization**: Broad categories (aggressive, defensive, hybrid) may not capture nuanced behaviors, highlighting an area for further refinement.
+
+### Future Work
+- **Team-Based Analysis**: Adding team-level data could improve insights into cooperative strategies.
+- **Granular Play Style Categories**: Developing finer distinctions within strategies could better capture dynamic shifts in play style.
+- **Real-Time Processing Optimization**: Optimizing the RL framework for real-time feedback would allow immediate strategic adjustments.
+
+---
+
+### Acknowledgments
+Data for this project was provided by Omnic Data, with additional support from Northeastern University, Roux Institute.
