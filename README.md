@@ -78,9 +78,9 @@ An RL model predicts win likelihood dynamically and provides actionable feedback
 ## Visualization
 
 - **Graphs**: Feature importance for win likelihood.
-- **Scatter Plots**: Play style distribution across ranks.
-  
-Example Visualization:
+- **Pair Plots**: Play style distribution across ranks.
+- **Liklihood Plots**: Win_liklihood distribution based on chunks per game. 
+
 ![image](https://github.com/user-attachments/assets/2f42e1eb-ea22-4fa9-b6ab-9e5c9d9a6bb9)
 
 ![image](https://github.com/user-attachments/assets/30ac0123-802d-4b25-b313-85cf472b13b1)
