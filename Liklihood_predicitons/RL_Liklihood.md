@@ -1,0 +1,1 @@
+This project utilizes reinforcement learning, specifically a Deep Q Network (DQN), to predict the likelihood of winning Rocket League matches on a per-chunk basis. The gameplay is divided into time-based chunks, and the model provides actionable feedback to improve performance in each chunk.
