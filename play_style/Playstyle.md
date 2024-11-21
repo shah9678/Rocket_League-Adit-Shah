@@ -12,6 +12,7 @@ This project analyzes Rocket League match data to extract features and detect pl
   - **Hybrid:** Balances offensive and defensive strategies.
 - **Rank-Based Analysis:** Adapts the detection logic to specific player ranks.
 - **Ball Control Analysis:** Isolates and evaluates the `ball_control` feature to observe its variation and impact across ranks.
+![Screenshot 2024-11-21 at 5 56 26 PM](https://github.com/user-attachments/assets/372aaccd-953e-4fcf-b518-74bed623022e)
 
 ## Workflow
 
