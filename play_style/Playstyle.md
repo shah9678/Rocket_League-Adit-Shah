@@ -13,6 +13,9 @@ This project analyzes Rocket League match data to extract features and detect pl
 - **Rank-Based Analysis:** Adapts the detection logic to specific player ranks.
 - **Ball Control Analysis:** Isolates and evaluates the `ball_control` feature to observe its variation and impact across ranks.
 ![Screenshot 2024-11-21 at 5 56 26 PM](https://github.com/user-attachments/assets/372aaccd-953e-4fcf-b518-74bed623022e)
+![Screenshot 2024-11-21 at 5 56 32 PM](https://github.com/user-attachments/assets/ec4aceb8-989b-4521-8835-1247b1e6fea3)
+![Screenshot 2024-11-21 at 5 56 42 PM](https://github.com/user-attachments/assets/124c7167-636c-416f-ba35-1bc3449fb384)
+![Screenshot 2024-11-21 at 5 56 48 PM](https://github.com/user-attachments/assets/75081793-4a4f-49fd-8a2f-64fe01dba1c0)
 
 ## Workflow
 
